@@ -914,7 +914,7 @@ class DNSer
   # represents the response (or nil, if there was a timeout).
   def DNSer.query(hostname, params = {})
     server   = params[:server]   || "8.8.8.8"
-    port     = params[:port]     || 53
+    port     = params[:port]     || 
     type     = params[:type]     || DNSer::Packet::TYPE_A
     cls      = params[:cls]      || DNSer::Packet::CLS_IN
     timeout  = params[:timeout]  || 3
