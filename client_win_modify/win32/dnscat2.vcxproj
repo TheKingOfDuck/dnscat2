@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{ADBA364D-BC56-49A2-BDFB-C13EADFDDE49}</ProjectGuid>
+    <RootNamespace>dnscat2</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>16.0.30323.82</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CallingConvention>Cdecl</CallingConvention>
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;dnsapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MinSpace</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;dnsapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\controller\controller.c" />
+    <ClCompile Include="..\controller\packet.c" />
+    <ClCompile Include="..\controller\session.c" />
+    <ClCompile Include="..\dnscat.c" />
+    <ClCompile Include="..\drivers\command\command_packet.c" />
+    <ClCompile Include="..\drivers\command\driver_command.c" />
+    <ClCompile Include="..\drivers\driver.c" />
+    <ClCompile Include="..\drivers\driver_console.c" />
+    <ClCompile Include="..\drivers\driver_exec.c" />
+    <ClCompile Include="..\drivers\driver_ping.c" />
+    <ClCompile Include="..\libs\buffer.c" />
+    <ClCompile Include="..\libs\crypto\encryptor.c" />
+    <ClCompile Include="..\libs\crypto\micro-ecc\uECC.c" />
+    <ClCompile Include="..\libs\crypto\salsa20.c" />
+    <ClCompile Include="..\libs\crypto\sha3.c" />
+    <ClCompile Include="..\libs\dns.c" />
+    <ClCompile Include="..\libs\ll.c" />
+    <ClCompile Include="..\libs\log.c" />
+    <ClCompile Include="..\libs\memory.c" />
+    <ClCompile Include="..\libs\my_getopt.c" />
+    <ClCompile Include="..\libs\select_group.c" />
+    <ClCompile Include="..\libs\tcp.c" />
+    <ClCompile Include="..\libs\types.c" />
+    <ClCompile Include="..\libs\udp.c" />
+    <ClCompile Include="..\tunnel_drivers\driver_dns.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\controller\controller.h" />
+    <ClInclude Include="..\controller\packet.h" />
+    <ClInclude Include="..\controller\session.h" />
+    <ClInclude Include="..\drivers\command\commands_standard.h" />
+    <ClInclude Include="..\drivers\command\commands_tunnel.h" />
+    <ClInclude Include="..\drivers\command\command_packet.h" />
+    <ClInclude Include="..\drivers\command\driver_command.h" />
+    <ClInclude Include="..\drivers\driver.h" />
+    <ClInclude Include="..\drivers\driver_console.h" />
+    <ClInclude Include="..\drivers\driver_exec.h" />
+    <ClInclude Include="..\drivers\driver_ping.h" />
+    <ClInclude Include="..\libs\buffer.h" />
+    <ClInclude Include="..\libs\crypto\byte_order.h" />
+    <ClInclude Include="..\libs\crypto\encryptor.h" />
+    <ClInclude Include="..\libs\crypto\encryptor_sas_dict.h" />
+    <ClInclude Include="..\libs\crypto\micro-ecc\types.h" />
+    <ClInclude Include="..\libs\crypto\micro-ecc\uecc.h" />
+    <ClInclude Include="..\libs\crypto\micro-ecc\uECC_vli.h" />
+    <ClInclude Include="..\libs\crypto\salsa20.h" />
+    <ClInclude Include="..\libs\crypto\sha3.h" />
+    <ClInclude Include="..\libs\crypto\ustd.h" />
+    <ClInclude Include="..\libs\dns.h" />
+    <ClInclude Include="..\libs\ll.h" />
+    <ClInclude Include="..\libs\log.h" />
+    <ClInclude Include="..\libs\memory.h" />
+    <ClInclude Include="..\libs\my_getopt.h" />
+    <ClInclude Include="..\libs\pstdint.h" />
+    <ClInclude Include="..\libs\select_group.h" />
+    <ClInclude Include="..\libs\tcp.h" />
+    <ClInclude Include="..\libs\types.h" />
+    <ClInclude Include="..\libs\udp.h" />
+    <ClInclude Include="..\tunnel_drivers\driver_dns.h" />
+    <ClInclude Include="..\tunnel_drivers\tunnel_driver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\libs\crypto\micro-ecc\asm_arm.inc" />
+    <None Include="..\libs\crypto\micro-ecc\asm_arm_mult_square.inc" />
+    <None Include="..\libs\crypto\micro-ecc\asm_avr.inc" />
+    <None Include="..\libs\crypto\micro-ecc\asm_avr_mult_square.inc" />
+    <None Include="..\libs\crypto\micro-ecc\curve-specific.inc" />
+    <None Include="..\libs\crypto\micro-ecc\platform-specific.inc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
