@@ -1,4 +1,16 @@
-***** NOTE: The password for the .zip downloads are all "password"! *****
+
+# 记录
+
+服务端
+```
+docker run -p 5353:53/udp -it --rm thekingofduck/dnscat2 ruby ./dnscat2.rb aliyun.com
+```
+客户端
+```
+$ make clean
+$ make
+$ ./dnscat --dns server=1.1.1.1,port=5353
+```
 
 # Introduction
 
