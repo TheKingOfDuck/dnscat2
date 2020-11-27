@@ -5,12 +5,19 @@
 ```
 docker run -p 5353:53/udp -it --rm thekingofduck/dnscat2 ruby ./dnscat2.rb aliyun.com
 ```
-客户端
+
+Linux客户端
 ```
 $ make clean
 $ make
 $ ./dnscat --dns server=1.1.1.1,port=5353
 ```
+Windows:
+```
+code /client_win_modify/dnscat.c
+line 420  system_dns = "111.222.333.444";
+```
+默认端口修改为5353,vs可正常编译
 
 # Introduction
 
