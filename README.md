@@ -9,10 +9,9 @@
 docker run -p 5353:53/udp -it --rm thekingofduck/dnscat2 ruby ./dnscat2.rb aliyun.com
 ```
 
-Linux客户端
+Linux/MacOS客户端
 ```
-$ make clean
-$ make
+$ make clean && make
 $ ./dnscat --dns server=1.1.1.1,port=5353
 ```
 Windows:
